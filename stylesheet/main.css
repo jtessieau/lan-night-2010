@@ -1,0 +1,254 @@
+html,body {
+  background-color : #000000;
+  margin : 0;
+  padding : 0;
+
+  background-image : url("../pictures/design/background.jpg");
+  background-repeat : no-repeat;
+  background-position : top center;
+
+  font-family : Georgia;
+}
+
+.header {
+  height : 245px;
+}
+
+.conteneur {
+  width : 800px;
+  margin : auto;
+}
+
+/*----------    MENU HORIZONTAL    ----------*/
+
+.menu {
+  height : 60px;
+  
+  padding : 0;
+  margin : 0;
+  margin-left : 170px;
+}
+
+.menu img {
+  border : none;
+}
+
+.menu ul {
+  padding : 0;
+  margin : 0;
+}
+
+.menu li {
+  float : left;
+  list-style-type : none;
+}
+
+.separateur_menu_horizontal {
+  height : 60px;
+  width : 2px;
+
+  background-image : url("../pictures/design/menu/separateur_menu_horizontal.png");
+}
+
+/*----------    FIN MENU HORIZONTAL    ----------*/
+
+.corps {
+  margin-top: 35px;
+
+  text-align : justify;
+  color : white;
+}
+
+.corps a {
+  text-decoration:none;
+  color:#aaFF00;
+}
+
+.corps a:hover {
+  text-decoration: underline;
+}
+
+.corps a:visited {
+  color:#00ccFF;
+}
+
+.sidebar {
+  width : 250px;
+  float : right;
+}
+
+.sidebar_remaining_days {
+  border:3px solid #aaFF00;
+  -moz-border-radius-topleft:12px;
+  -moz-border-radius-topright:12px;
+  -webkit-border-top-left-radius:12px;
+  -webkit-border-top-right-radius:12px;
+  background-color:#191919;
+  color:#aaFF00;
+  text-align:center;
+  font-family:sans-serif;
+  font-size:4em;
+  font-weight:bold;
+  margin-bottom:5px;
+  padding:5px;
+}
+
+.sidebar_remaining_places {
+  border:3px solid #00ccFF;
+  -moz-border-radius-bottomleft:12px;
+  -moz-border-radius-bottomright:12px;
+  -webkit-border-bottom-left-radius:12px;
+  -webkit-border-bottom-right-radius:12px;
+  background-color:#191919;
+  color:#00ccFF;
+  text-align:center;
+  font-size:1.5em;
+  padding:5px;
+  margin-bottom:15px;
+}
+
+.sidebar_news {
+  border:3px solid #FF7700;
+  -moz-border-radius:12px;
+  -webkit-border-radius:12px;
+  background-color:#191919;
+  padding-left:15px;
+  padding-right:15px;
+  padding-top:7px;
+  padding-bottom:7px;
+}
+
+.sidebar_news_headtitle {
+  text-align:center;
+  font-size:1.5em;
+  font-weight:bold;
+  margin-bottom:10px;
+  color :#FF7700;
+}
+
+.sidebar_news_title {
+}
+
+.sidebar_news_content{
+    margin-top:6px;
+    font-size:0.85em;
+}
+
+.sidebar_news_separateur {
+  height:1px;
+  width:150px;
+  margin:auto;
+  border-top:1px dashed #FF7700;
+  margin-top:10px;
+  margin-bottom:8px;
+}
+
+.mot_accueil {
+  margin-right : 290px;
+  text-indent : 25px;
+}
+
+.mot_accueil_signature {
+  text-align : right;
+  margin-right : 60px;
+  margin-top : 35px;
+}
+.footer {
+  height:20px;
+  clear:both;
+}
+
+
+/*----------- Debut Formulaire Inscription -----------*/
+.introduction_inscription p {
+  text-indent:25px;
+}
+
+.formulaire_inscription {
+  width:520px;
+}
+
+.formulaire_inscription label{
+  display:block;
+  width:155px;
+  float:left;
+}
+
+.checkbox {
+  margin:0;
+  padding:0;
+}
+
+.checkbox label {
+  display:inline;
+  width:100%;
+  float:none;
+}
+
+.envoi {
+  width:100px;
+  margin:auto;
+  margin-top:25px
+}
+
+.inscription_illustration {
+    float:right;
+    width:260px;
+}
+
+.non_valide {
+  text-decoration:line-through;
+}
+
+.mise_a_jour {
+  font-weight:bold;
+  color:red;
+}
+
+/*------ Debut page Infos ------*/
+
+.infos p {
+  text-indent:25px;
+}
+
+.infos_title {
+  font-size:1.3em;
+  color:#FF7700;
+  text-decoration:underline;
+}
+
+.infos_illustrations {
+  text-align:center;
+}
+
+/*------ Debut page Tools ------*/
+
+.tools p{
+  text-indent:25px;
+}
+
+.tools_title {
+  font-size:1.3em;
+  color:#FF7700;
+  text-decoration:underline;
+  margin-top:25px;
+}
+
+.tools_liens_download {
+    text-indent:0px;
+}
+
+/*------ Debut page Contact -----*/
+
+.contact p {
+  text-indent:25px;
+}
+
+.formulaire_contact {
+  width:520px;
+}
+
+.contact_adresse {
+  float:right;
+  width:240px;
+}
