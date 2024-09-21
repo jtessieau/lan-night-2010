@@ -153,9 +153,6 @@ h2 {
 }
 
 /*----------- Debut Formulaire Inscription -----------*/
-.introduction_inscription p {
-	text-indent: 25px;
-}
 
 .formulaire_inscription {
 	width: 520px;
@@ -223,15 +220,12 @@ h2 {
 
 /*------ Debut page Contact -----*/
 
-.contact p {
-	text-indent: 25px;
-}
-
 .formulaire_contact {
 	width: 520px;
+	margin: auto;
 }
 
 .contact_adresse {
-	float: right;
+	/* float: right; */
 	width: 240px;
 }
