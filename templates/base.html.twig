@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Lan night - Brienon Sur Arman&ccedil;on - {% block title %}Site{% endblock %}</title>
+  <link rel="stylesheet" media="screen" type="text/css" title="Design Officiel" href="stylesheet/main.css" />
+  <link rel="shortcut icon" media="screen" type="image/png" href="pictures/favicon.png" />
+  {% block stylesheets %} {% endblock %} {% block javascripts %} {% endblock %}
+</head>
+
+<body>
+  <header>
+    {{ include("shared/horizontalMenu.html.twig") }}
+  </header>
+
+  <div class="container">
+    {% block body %} {% endblock %}
+  </div>
+</body>
+
+</html>
