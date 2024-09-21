@@ -11,10 +11,6 @@ body {
 	font-family: Georgia;
 }
 
-.header {
-	height: 245px;
-}
-
 h2 {
 	font-size: 1.3em;
 	color: #ff7700;
@@ -24,12 +20,16 @@ h2 {
 /*----------    MENU HORIZONTAL    ----------*/
 
 .menu {
+	position: relative;
+	top: 245px;
+	left: 0;
+	right: 0;
 	display: flex;
 	justify-content: center;
 	height: 60px;
 
 	padding: 0;
-	margin: auto;
+	/* margin: auto; */
 	margin-left: 170px;
 }
 
@@ -51,7 +51,8 @@ h2 {
 /*----------    FIN MENU HORIZONTAL    ----------*/
 
 .container {
-	margin-top: 35px;
+	position: relative;
+	top: 280px;
 
 	text-align: justify;
 	color: white;
