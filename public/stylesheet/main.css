@@ -155,13 +155,13 @@ h2 {
 /*----------- Debut Formulaire Inscription -----------*/
 
 .formulaire_inscription {
+	margin: auto;
 	width: 520px;
 }
 
 .formulaire_inscription label {
 	display: block;
 	width: 155px;
-	float: left;
 }
 
 .checkbox {
@@ -219,7 +219,12 @@ h2 {
 }
 
 /*------ Debut page Contact -----*/
-
+.form-container {
+	display: flex;
+	flex-direction: row-reverse;
+	justify-content: space-between;
+	align-items: center;
+}
 .formulaire_contact {
 	width: 520px;
 	margin: auto;
