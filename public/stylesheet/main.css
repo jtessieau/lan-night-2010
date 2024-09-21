@@ -15,6 +15,12 @@ body {
 	height: 245px;
 }
 
+h2 {
+	font-size: 1.3em;
+	color: #ff7700;
+	text-decoration: underline;
+}
+
 /*----------    MENU HORIZONTAL    ----------*/
 
 .menu {
@@ -192,16 +198,6 @@ body {
 }
 
 /*------ Debut page Infos ------*/
-
-.infos p {
-	text-indent: 25px;
-}
-
-.infos_title {
-	font-size: 1.3em;
-	color: #ff7700;
-	text-decoration: underline;
-}
 
 .infos_illustrations {
 	text-align: center;
