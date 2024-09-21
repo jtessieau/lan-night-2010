@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8" />
-  <title>{% block title %} Welcome! {% endblock %}</title>
+  <title>Lan night - Brienon Sur Arman&ccedil;on - {% block title %}Site{% endblock %}</title>
   <link rel="stylesheet" media="screen" type="text/css" title="Design Officiel" href="stylesheet/main.css" />
   <link rel="shortcut icon" media="screen" type="image/png" href="pictures/favicon.png" />
   {% block stylesheets %} {% endblock %} {% block javascripts %} {% endblock %}
@@ -11,9 +11,7 @@
 
 <body>
   <header>
-    <nav>
-      {{ include("shared/horizontalMenu.html.twig") }}
-    </nav>
+    {{ include("shared/horizontalMenu.html.twig") }}
   </header>
 
   <div class="container">

@@ -1,8 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}
-Lan night - Brienon Sur Arman&ccedil;on - Accueil
-{% endblock %}
+{% block title %} Accueil {% endblock %}
 
 {% block body %}
 
@@ -34,6 +32,7 @@ Lan night - Brienon Sur Arman&ccedil;on - Accueil
 		reprit le flambeau pour mettre en place la
 		<strong>LAN&nbsp;NIGHT&nbsp;&Eacute;dition&nbsp;2010</strong>.
 	</p>
+
 	<p>
 		L'instant d'une nuit, rejoint d'autres
 		<i>gamers</i>
@@ -41,22 +40,24 @@ Lan night - Brienon Sur Arman&ccedil;on - Accueil
 		multi-joueurs jouissives. Pas de comp&eacute;tition, juste le
 		plaisir de jouer, et l'ambiance du r&eacute;seau local.
 	</p>
+
 	<p>
 		Si tu as encore des points &agrave; &eacute;claircir, rend toi
 		sur la page
-		<a href="#">infos</a>. La plupart de tes doutes y seront
+		<a href={{ path('app_informations') }}>infos</a>. La plupart de tes doutes y seront
 		lev&eacute;s.
 	</p>
+
 	<p>
 		Si au contraire, tu sais tous ce qu'il y a &agrave; savoir et
 		que tu veux participer, rends toi directement sur la page
-		<a href="#">inscriptions</a>
+		<a href={{ path('app_signup') }}>inscriptions</a>
 		afin de r&eacute;server ta place pour cette nuit unique.
 	</p>
+
 	<p class="mot_accueil_signature">
 		Julien alias
 		<b>Acronyme</b>
 	</p>
-</div>
 </div>
 {% endblock %}
