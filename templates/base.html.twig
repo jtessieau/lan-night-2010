@@ -10,9 +10,11 @@
 </head>
 
 <body>
-  <div class="header"></div>
-
-  {{ include("shared/horizontalMenu.html.twig") }}
+  <header>
+    <nav>
+      {{ include("shared/horizontalMenu.html.twig") }}
+    </nav>
+  </header>
 
   <div class="container">
     {% block body %} {% endblock %}
