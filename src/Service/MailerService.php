@@ -27,7 +27,7 @@ class MailerService
             ->from($data['email'])
             ->to('me@example.com')
             ->subject($data['subject'])
-            ->html($data['message'])
+            ->html(htmlspecialchars($data['message']))
         ;
 
         try {

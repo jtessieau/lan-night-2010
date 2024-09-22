@@ -2,12 +2,13 @@
 
 namespace App\Form;
 
+use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
-use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+use Symfony\Component\Form\Extension\Core\Type\FormType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 
@@ -17,7 +18,11 @@ class ContactType extends AbstractType
     {
         $builder
             ->add('email', EmailType::class, [
-                'label' => 'E-mail:'
+                'label' => 'E-mail:',
+                'constraints' => [
+                    new Assert\NotBlank(['message'=>'Email cannot be blank']),
+                    new Assert\Email(['message' => 'Please provide a valid email address'])
+                ]
             ])
             ->add('subject', ChoiceType::class, [
                 'choices' => [
@@ -28,11 +33,19 @@ class ContactType extends AbstractType
                 ],
                 'label' => 'Sujet:',
                 'placeholder' => 'Choisir un sujet',
-                'placeholder_attr' => ['disabled'=>true]
+                'placeholder_attr' => ['disabled'=>true],
+                'constraints' => [
+                    new Assert\Choice([
+                        'choices' => ['organisation', 'technique', 'tools', 'autres'],
+                        'message' => 'Choose a valid subject.'
+                    ])
+                ]
             ])
             ->add('message', TextareaType::class, [
                 'label' => 'Message:',
-                'attr' => ['rows' => 10, 'cols' => 50]
+                'constraints' => [
+                    new Assert\NotBlank(['message' => 'Please add a message'])
+                ]
             ])
             ->add('send', SubmitType::class, [
                 'label' => 'Envoyer'
