@@ -226,8 +226,15 @@ h2 {
 	margin-bottom: 0.5rem;
 }
 
+.form textarea {
+	resize: none;
+	overflow: auto;
+	height: 10rem;
+}
+
 .form input,
-.form select {
+.form select,
+.form textarea {
 	padding: 0.5rem 0.75rem;
 }
 
@@ -271,6 +278,7 @@ h2 {
 .contact-form-container {
 	display: flex;
 	flex-direction: row-reverse;
+	flex-wrap: wrap;
 	align-items: center;
 	justify-content: center;
 	gap: 2rem;
@@ -278,20 +286,10 @@ h2 {
 	margin-top: 3rem;
 }
 .contact-form {
-	flex-basis: 500px;
+	flex-basis: 450px;
 	justify-items: center;
 }
 
 .contact-address {
 	text-align: center;
-}
-
-@media screen and (max-width: 900px) {
-	.contact-form-container {
-		flex-direction: column-reverse;
-	}
-	.contact-form {
-		flex-basis: 100%;
-		flex-grow: 1;
-	}
 }
