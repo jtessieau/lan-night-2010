@@ -3,52 +3,41 @@
 {% block title %} Contact {% endblock %}
 
 {% block body %}
+<h1>Comment nous contacter</h1>
+
 <p>
-    Pour nous contacter rapidement, rien de plus simple ! Remplissez juste ce
-    petit fomulaire en indiquant soit un numero de t&eacute;l&eacute;phone,
-    soit une adresse mail o&ugrave; l'on peut vous joindre, ainsi que votre
+    Pour nous contacter rapidement, rien de plus simple ! Remplissez fomulaire en indiquant
+    soit un numero de t&eacute;l&eacute;phone,
+    soit une adresse e-mail o&ugrave; l'on peut vous joindre, ainsi que votre
     question, et nous t&acirc;cherons d'y r&eacute;pondre au plus vite.
 </p>
-
-<div class="contact_adresse">
+{% if errorMessage %}
+<div class="error-message">
     <p>
-        Adresse de la MTB
+        Impossible d'envoyer le formulaire de contact pour le moment.
     </p>
     <p>
-        Maison du Tourisme<br />
-        9 place Emile BLONDEAU<br />
-        89210 Brienon / Arman&ccedil;on<br />
-        tel : 03&nbsp;86&nbsp;43&nbsp;03&nbsp;36
+        R&eacute;essayez plus tard ou contactez directement au num&eacute;ro ci-dessous.
     </p>
-</div> <!-- fin div adresse -->
+</div>
+{% endif %}
 
-<div class="formulaire_contact">
-    <form>
-        <fieldset>
-            <legend>Formulaire de contact</legend>
-            <p>
-                <label for="email">Votre e-mail ou numero de t&eacute;l&eacute;phone :</label><br />
-                <input type="text" name="email" id="email" size="38" maxlength="50" />
-            </p>
+{% if app.flashes('success') is not empty %}
+<div class="success-message">
+    <p>
+        Message envoy&eacute; ! Nous reviendrons vers vous au plus vite.
+    </p>
+</div>
+{% endif %}
 
-            <p>
-                <label for="sujet">Sujet du message</label><br />
-                <select name="sujet" id="sujet">
-                    <option value="none">Choisissez le sujet</option>
-                    <option value="organisation">Question sur l'organisation</option>
-                    <option value="technique">Question technique</option>
-                    <option value="proposition_tools">Une proposition pour la section "tools"</option>
-                    <option value="autre">Autres demandes</option>
-                </select>
-            </p>
-            <p>
-                <label for="message">Votre message :</label><br />
-                <textarea name="message" id="message" cols="50" rows="10"></textarea>
-            </p>
-            <p class="envoi">
-                <input type="submit" value="Envoyer" name="envoyer" id="envoyer" />
-            </p>
-        </fieldset>
-    </form>
+<div class="contact-form-container">
+
+    {{ include("shared/addressMTB.html.twig")}}
+
+
+    {% if not errorMessage %}
+    {{ include("forms/contact.html.twig") }}
+    {% endif %}
+
 </div>
 {% endblock %}
