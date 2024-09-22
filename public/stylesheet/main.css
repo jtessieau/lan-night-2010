@@ -57,8 +57,10 @@ h2 {
 	text-align: justify;
 	color: white;
 
-	width: 800px;
+	max-width: 800px;
 	margin: auto;
+
+	padding: 1rem 2rem;
 }
 
 .container a {
@@ -175,12 +177,6 @@ h2 {
 	float: none;
 }
 
-.envoi {
-	width: 100px;
-	margin: auto;
-	margin-top: 25px;
-}
-
 .inscription_illustration {
 	float: right;
 	width: 260px;
@@ -218,19 +214,58 @@ h2 {
 	text-indent: 0px;
 }
 
-/*------ Debut page Contact -----*/
-.form-container {
+/*------ Form Generic -----*/
+.form .form-group {
 	display: flex;
-	flex-direction: row-reverse;
-	justify-content: space-between;
-	align-items: center;
+	flex-direction: column;
+
+	margin-bottom: 0.75rem;
 }
-.formulaire_contact {
-	width: 520px;
-	margin: auto;
+.form label {
+	display: block;
+	margin-bottom: 0.5rem;
 }
 
-.contact_adresse {
-	/* float: right; */
-	width: 240px;
+.form input,
+.form select {
+	padding: 0.5rem 0.75rem;
+}
+
+.form .form-control {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+}
+
+.form .form-control .btn {
+	padding: 0.5rem 0.75rem;
+}
+
+/*------ Debut page Contact -----*/
+.contact-form-container {
+	display: flex;
+	flex-direction: row-reverse;
+	align-items: center;
+	justify-content: center;
+	gap: 2rem;
+
+	margin-top: 3rem;
+}
+.contact-form {
+	flex-basis: 500px;
+	justify-items: center;
+}
+
+.contact-address {
+	text-align: center;
+}
+
+@media screen and (max-width: 900px) {
+	.contact-form-container {
+		flex-direction: column-reverse;
+	}
+	.contact-form {
+		flex-basis: 100%;
+		flex-grow: 1;
+	}
 }
