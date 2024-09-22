@@ -241,6 +241,32 @@ h2 {
 	padding: 0.5rem 0.75rem;
 }
 
+.error-message,
+.success-message {
+	width: fit-content;
+	padding: 2rem;
+	text-align: center;
+	border-radius: 1rem;
+	margin: 3rem auto;
+}
+
+.error-message {
+	color: #ff7700;
+	border: 2px solid #ff7700;
+}
+
+.success-message {
+	color: #aaff00;
+	border: 2px solid #aaff00;
+}
+
+.error-message p,
+.success-message p {
+	padding: 0;
+	margin: 0;
+	line-height: 1.5rem;
+}
+
 /*------ Debut page Contact -----*/
 .contact-form-container {
 	display: flex;
