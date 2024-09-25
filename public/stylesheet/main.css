@@ -156,30 +156,11 @@ h2 {
 
 /*----------- Debut Formulaire Inscription -----------*/
 
-.formulaire_inscription {
-	margin: auto;
-	width: 520px;
-}
-
-.formulaire_inscription label {
-	display: block;
-	width: 155px;
-}
-
-.checkbox {
-	margin: 0;
-	padding: 0;
-}
-
-.checkbox label {
-	display: inline;
-	width: 100%;
-	float: none;
-}
-
-.inscription_illustration {
-	float: right;
-	width: 260px;
+.register-form-container {
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+	flex-direction: row-reverse;
 }
 
 .non_valide {
@@ -221,6 +202,19 @@ h2 {
 
 	margin-bottom: 0.75rem;
 }
+
+.form .form-checkbox {
+	display: flex;
+	flex-direction: row;
+	align-items: baseline;
+
+	margin-bottom: 0.75rem;
+}
+
+.form .form-checkbox input {
+	margin-right: 1rem;
+}
+
 .form label {
 	display: block;
 	margin-bottom: 0.5rem;
