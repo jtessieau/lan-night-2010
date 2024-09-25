@@ -46,65 +46,34 @@
     d'autres fins que l'organisation de la LAN NIGHT.
 </p>
 
-<div class="form-container">
-    <div class="inscription_illustration">
+<div class="register-form-container">
+    <div class="illustration">
         <img src="pictures/inscription_illustration.jpg" alt="Photo lan night 2009" />
     </div>
 
-    <div class="formulaire_inscription">
-        <form>
-            <fieldset>
-                <legend>Formulaire d'inscription</legend>
-                <p>
-                    <label for="nom_de_famille">Nom de famille* : </label>
-                    <input type="text" name="nom_de_famille" id="nom_de_famille" size="50" maxlength="50" />
-                </p>
-                <p>
-                    <label for="prenom">Pr&eacute;nom* : </label>
-                    <input type="text" name="prenom" id="prenom" size="50" maxlength="50" />
-                </p>
-                <p>
-                    <label for="jour">Date de naissance* :</label>
-                    <input type="text" name="jour" id="jour" size="2" maxlength="2" /> /
-                    <input type="text" name="mois" id="mois" size="2" maxlength="2" /> /
-                    <input type="text" name="annee" id="annee" size="4" maxlength="4" />
-                    &nbsp;&nbsp;&nbsp;&nbsp;(JJ/MM/AAAA)
-                </p>
-                <p>
-                    <label for="adresse">Adresse* : </label>
-                    <input type="text" name="adresse" id="adresse" size="50" maxlength="50" />
-                </p>
-                <p>
-                    <label for="code_postal">Code postal* : </label>
-                    <input type="text" name="code_postal" id="code_postal" size="5" maxlength="5" />
-                </p>
-                <p>
-                    <label for="ville">Ville* : </label>
-                    <input type="text" name="ville" id="ville" size="50" maxlength="50" />
-                </p>
-                <p>
-                    <label for="email">E-mail* : </label>
-                    <input type="text" name="email" id="email" size="50" maxlength="50" />
-                </p>
-                <p>
-                    <label for="telephone">T&eacute;l&eacute;phone : </label>
-                    <input type="text" name="telephone" id="telephone" size="10" maxlength="10" />
-                </p>
-                <p class="checkbox">
-                    <input type="radio" name="cable" value="cable_ok" id="cable_ok" />
-                    <label for="cable_ok">Je poss&egrave;de un cable r&eacute;seau d'au moins 5m que je
-                        ram&egrave;nerai.</label>
-                </p>
-                <p class="checkbox">
-                    <input type="radio" name="cable" value="cable_needed" id="cable_needed" />
-                    <label for="cable_needed">Je n'ai pas de tel cable, je souhaiterai que l'on m'en pr&ecirc;te
-                        un.</label>
-                </p>
-                <p class="envoi">
-                    <input type="submit" value="Envoyer" name="envoyer" id="envoyer" />
-                </p>
-            </fieldset>
-        </form>
+    <div class="formulaire _inscription">
+        {% if errorMessage %}
+
+        {% if errorMessage == "e-mail" %}
+        <div class="error-message">
+            Cette adresse e-mail est deja utilise.
+        </div>
+
+        {% else %}
+        <div class="error-message">
+            Une erreur c'est produite, r&eacute;essayez plus tard.
+        </div>
+        {% endif %}
+
+        {% endif %}
+
+        {% if app.flashes('success') is not empty %}
+        <div class="success-message">
+            Votre inscription a bien &eacute;t&eacute; enregistr&eacute;. Merci.
+        </div>
+        {% endif %}
+
+        {{ include('forms/registerToEvent.html.twig') }}
     </div>
 </div>
 {% endblock %}
