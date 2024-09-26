@@ -1,66 +1,108 @@
-html,
+/*----------    Reset CSS    ----------*/
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+	margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul {
+	list-style: none;
+	padding: 0;
+}
+
+/* Set core root defaults */
+html:focus-within {
+	scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+	min-height: 100vh;
+	text-rendering: optimizeSpeed;
+	line-height: 1.5;
+}
+
+/* A elements */
+a {
+	text-decoration: none;
+	color: inherit;
+	font-weight: bold;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+	max-width: 100%;
+	display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+	font: inherit;
+}
+
+/*----------    Variable    ----------*/
+
+:root {
+	--blue: #00ccff;
+	--orange: #ff7700;
+	--green: #aaff00;
+	--dark: #191919;
+	--light: #fafafa;
+
+	--widget-border-radius: 12px;
+}
+
+/*----------    Global style    ----------*/
 body {
 	background-color: #000000;
-	margin: 0;
-	padding: 0;
 
 	background-image: url("../pictures/design/background.jpg");
 	background-repeat: no-repeat;
 	background-position: top center;
+}
 
-	font-family: Georgia;
+h1 {
+	font-size: 1.5rem;
 }
 
 h2 {
 	font-size: 1.3em;
-	color: #ff7700;
+	color: var(--orange);
 	text-decoration: underline;
 }
 
-/*----------    MENU HORIZONTAL    ----------*/
-
-.menu {
-	position: relative;
-	top: 245px;
-	left: 0;
-	right: 0;
-	display: flex;
-	justify-content: center;
-	height: 60px;
-
-	padding: 0;
-	/* margin: auto; */
-	margin-left: 170px;
+p {
+	line-height: 1.5rem;
+	margin-bottom: 1rem;
 }
-
-.menu img {
-	border: none;
-}
-
-.menu li {
-	list-style-type: none;
-}
-
-.separateur_menu_horizontal {
-	height: 60px;
-	width: 2px;
-
-	background-image: url("../pictures/design/menu/separateur_menu_horizontal.png");
-}
-
-/*----------    FIN MENU HORIZONTAL    ----------*/
 
 .container {
-	position: relative;
-	top: 280px;
-
-	text-align: justify;
-	color: white;
-
-	max-width: 800px;
+	max-width: 900px;
 	margin: auto;
+	padding: 2rem;
 
-	padding: 1rem 2rem;
+	font-size: 16px;
+
+	color: var(--light);
 }
 
 .container a {
@@ -76,82 +118,91 @@ h2 {
 	color: #00ccff;
 }
 
+/*----------    Helpers    ----------*/
+
+.widget {
+	border: 2px solid var(--green);
+	background-color: var(--dark);
+	color: var(--light);
+
+	margin: 0.5rem 0;
+	padding: 0.5rem;
+}
+
+.widget:nth-child(3n + 1) {
+	border-color: var(--green);
+	color: var(--green);
+}
+.widget:nth-child(3n + 2) {
+	border-color: var(--orange);
+	color: var(--orange);
+}
+.widget:nth-child(3n) {
+	border-color: var(--blue);
+	color: var(--blue);
+}
+.widget-top {
+	border-top-left-radius: var(--widget-border-radius);
+	border-top-right-radius: var(--widget-border-radius);
+}
+.widget-middle {
+	border-radius: 0;
+}
+.widget-bottom {
+	border-bottom-left-radius: var(--widget-border-radius);
+	border-bottom-right-radius: var(--widget-border-radius);
+}
+.widget-standalone {
+	border-radius: var(--widget-border-radius);
+}
+
+/*----------    MENU HORIZONTAL    ----------*/
+
+.menu {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 60px;
+	margin-top: 245px;
+	margin-left: 250px;
+}
+
+.menu img {
+	border: none;
+}
+
+.menu li {
+	list-style-type: none;
+}
+
+.menu-splitter {
+	height: 40px;
+	width: 2px;
+
+	margin: 0 0.5rem;
+
+	background-color: rgba(255, 255, 255, 0.2);
+}
+
+/*----------    Homepage    ----------*/
+.homepage-container {
+	display: flex;
+	flex-direction: row-reverse;
+	gap: 2rem;
+}
+
 .sidebar {
-	width: 250px;
-	float: right;
+	width: 300px;
 }
 
-.sidebar_remaining_days {
-	border: 3px solid #aaff00;
-	border-top-left-radius: 12px;
-	border-top-right-radius: 12px;
-	background-color: #191919;
-	color: #aaff00;
-	text-align: center;
-	font-family: sans-serif;
-	font-size: 4em;
-	font-weight: bold;
-	margin-bottom: 5px;
-	padding: 5px;
-}
-
-.sidebar_remaining_places {
-	border: 3px solid #00ccff;
-	border-bottom-left-radius: 12px;
-	border-bottom-right-radius: 12px;
-	background-color: #191919;
-	color: #00ccff;
-	text-align: center;
-	font-size: 1.5em;
-	padding: 5px;
-	margin-bottom: 15px;
-}
-
-.sidebar_news {
-	border: 3px solid #ff7700;
-	border-radius: 12px;
-	background-color: #191919;
-	padding-left: 15px;
-	padding-right: 15px;
-	padding-top: 7px;
-	padding-bottom: 7px;
-}
-
-.sidebar_news_headtitle {
-	text-align: center;
-	font-size: 1.5em;
-	font-weight: bold;
-	margin-bottom: 10px;
-	color: #ff7700;
-}
-
-.sidebar_news_content {
-	margin-top: 6px;
-	font-size: 0.85em;
-}
-
-.sidebar_news_separateur {
-	height: 1px;
-	width: 150px;
-	margin: auto;
-	border-top: 1px dashed #ff7700;
-	margin-top: 10px;
-	margin-bottom: 8px;
-}
-
-.mot_accueil {
-	margin-right: 290px;
+.homepage-main {
 	text-indent: 25px;
 }
 
-.mot_accueil_signature {
+.homepage-container .signature {
 	text-align: right;
 	margin-right: 60px;
 	margin-top: 35px;
-}
-.footer {
-	height: 20px;
-	clear: both;
 }
 
 /*----------- Debut Formulaire Inscription -----------*/
