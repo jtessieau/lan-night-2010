@@ -2,7 +2,9 @@
 
 namespace App\Service;
 
+use App\Entity\Attendant;
 use Psr\Log\LoggerInterface;
+use Symfony\Bridge\Twig\Mime\TemplatedEmail;
 use Symfony\Component\Mime\Email;
 use Symfony\Component\Form\FormInterface;
 use Symfony\Component\Mailer\MailerInterface;
@@ -19,7 +21,7 @@ class MailerService
         $this->logger = $logger;
     }
 
-    public function sendContatFormEmail(FormInterface $form)
+    public function sendContatFormEmail(FormInterface $form): void
     {
         $data = $form->getData();
 
@@ -27,9 +29,41 @@ class MailerService
             ->from($data['email'])
             ->to('me@example.com')
             ->subject($data['subject'])
-            ->html(htmlspecialchars($data['message']))
-        ;
+            ->html(htmlspecialchars($data['message']));
 
+        $this->sendEmail($email);
+    }
+
+    public function sendNewAttendantRegisrationEmail(Attendant $attendant): void
+    {
+        $email = (new TemplatedEmail())
+            ->from('admin@exemple.com')
+            ->to('admin@exemple.com')
+            ->subject('new attendant registration')
+            ->htmlTemplate('emails/newRegistrationToAdmin.html.twig')
+            ->context([
+                'attendant' => $attendant
+            ]);
+
+        $this->sendEmail($email);
+    }
+
+    public function sendNewAttendantWelcomeEmail(Attendant $attendant): void
+    {
+        $email = (new TemplatedEmail())
+            ->from('no-reply@example.com')
+            ->to($attendant->getEmail())
+            ->subject('Merci de votre inscription lan ')
+            ->htmlTemplate('emails/newRegistrationToAttendant.html.twig')
+            ->context([
+                'attendant' => $attendant
+            ]);
+
+        $this->sendEmail($email);
+    }
+
+    public function sendEmail($email): void
+    {
         try {
             // Try sending the email
             $this->mailer->send($email);
