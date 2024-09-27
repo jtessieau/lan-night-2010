@@ -3,23 +3,43 @@
 
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Lan night - Brienon Sur Arman&ccedil;on - {% block title %}Site{% endblock %}</title>
-  <link rel="stylesheet" media="screen" type="text/css" title="Design Officiel" href="stylesheet/main.css" />
   <link rel="shortcut icon" media="screen" type="image/png" href="pictures/favicon.png" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
     integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
   {% block stylesheets %} {% endblock %} {% block javascripts %} {% endblock %}
+  {{ encore_entry_link_tags('app') }}
+  {{ encore_entry_script_tags('app') }}
 </head>
 
-<body>
+<body class="text-white min-h-screen flex flex-col">
   <header>
     {{ include("shared/horizontalMenu.html.twig") }}
   </header>
 
-  <div class="container">
+  <div class="container max-w-[800px] px-6 py-4 flex-grow">
     {% block body %} {% endblock %}
   </div>
+
+  <footer class="py-4 text-center mt-8">
+    <ul class="flex flex-row justify-center gap-8">
+      <li class="flex items-center gap-2">
+        <div>
+          <i class="fa-brands fa-x-twitter text-xl"></i>
+        </div>
+      </li>
+      <li class="flex items-center gap-2">
+        <div><i class="fa-brands fa-facebook-f text-xl"></i></div>
+        <div class="text-lg">Facebook</div>
+      </li>
+      <li class="flex items-center gap-2">
+        <div><i class="fa-brands fa-instagram text-xl"></i></div>
+        <div class="text-lg">Instagram</div>
+      </li>
+    </ul>
+  </footer>
 </body>
 
 </html>

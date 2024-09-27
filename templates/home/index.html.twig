@@ -3,27 +3,13 @@
 {% block title %} Accueil {% endblock %}
 
 {% block body %}
-<div class="homepage-container">
-	<aside class="sidebar">
-		<div class="widget widget-top">
-			TODO: Remaining days
-		</div>
 
-		<div class="widget widget-bottom">
-			TODO: Remaining place
-		</div>
+<h1>
+	Lan Night &Eacute;dition 2010
+</h1>
 
-		<div class="widget widget-standalone">
-			<div class="sidebar-news-headtitle">Au Rapport</div>
-			TODO: Afficher news
-		</div>
-	</aside>
-
-	<main class="homepage-main">
-		<p>
-			A l'intention du <i>gamer</i> qui sommeil en toi.
-		</p>
-
+<div class="grid grid-cols-1 md:grid-cols-[1fr_180px] grid-rows-[1fr_auto] gap-8">
+	<main class="col-span-2 md:col-span-1">
 		<p>
 			Suite au succ&egrave;s rencontr&eacute; l'an pass&eacute; par la
 			premi&egrave;re &eacute;dition de la nuit du jeu en
@@ -54,11 +40,50 @@
 			<a href={{ path('app_signup') }}>inscriptions</a>
 			afin de r&eacute;server ta place pour cette nuit unique.
 		</p>
-
-		<p class="signature">
-			Julien alias
-			<b>Acronyme</b>
-		</p>
 	</main>
+
+	<aside class="hidden md:block">
+		<div class="px-4 py-2 border-4 rounded-t-2xl border-lime-400 mb-2 flex flex-col justify-center">
+			<div class="text-center text-lime-400 font-semibold text-lg">
+				Countdown
+			</div>
+			<div class="text-lime-400 font-bold text-2xl text-center">
+				{# TODO: Remaining days implementation #}
+				J - 153
+			</div>
+		</div>
+
+		<div class="px-4 py-2 border-4 rounded-b-2xl border-orange-400 flex flex-col justify-center">
+			<div class="text-center text-orange-400 font-semibold text-lg">
+				Places restantes
+			</div>
+			<div class="text-orange-400 font-bold text-2xl text-center">
+				{# TODO: Remaining places implementation #}
+				60
+			</div>
+		</div>
+
+		<div class="px-4 py-2 border-4 rounded-2xl border-cyan-400 mt-4 flex flex-col gap-1">
+			<div class="text-center text-cyan-400 font-semibold text-lg">Au Rapport</div>
+			{# TODO: New implementation #}
+			<ul>
+				<li class="truncate">Titre de la news ici meme si c'est trop long</li>
+				<li class="truncate">Titre de la news ici meme si c'est trop long</li>
+				<li class="truncate">Titre de la news ici meme si c'est trop long</li>
+			</ul>
+
+		</div>
+	</aside>
+
+	<section class="flex flex-wrap justify-center align-content-center gap-4 col-span-2">
+		<a href={{ path('app_signup')}}
+			class="inline-block uppercase font-bold py-2 px-4 rounded-lg bg-lime-400 border-2 border-transparent text-black text-md hover:bg-lime-300">
+			R&eacute;serve ta place
+		</a>
+		<a href={{ path('app_informations')}}
+			class="inline-block uppercase font-bold py-2 px-4 rounded-lg bg-transparent border-2 border-lime-400 text-lime-400  hover:bg-lime-400 hover:text-black text-md">
+			Plus d'informations
+		</a>
+	</section>
 </div>
 {% endblock %}
