@@ -18,6 +18,9 @@
 		@apply mb-0;
 	}
 
+	main {
+		@apply mb-8;
+	}
 	section {
 		@apply mb-8;
 	}

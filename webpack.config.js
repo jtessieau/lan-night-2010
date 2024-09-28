@@ -72,6 +72,10 @@ Encore
 	.copyFiles({
 		from: "./assets/images",
 		to: "images/[path][name].[ext]",
+	})
+	.copyFiles({
+		from: "./assets/contents",
+		to: "contents/[path][name].[ext]",
 	});
 
 module.exports = Encore.getWebpackConfig();
