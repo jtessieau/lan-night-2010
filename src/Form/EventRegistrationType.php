@@ -39,10 +39,10 @@ class EventRegistrationType extends AbstractType
                     new Assert\NotBlank(['message' => 'Birth date required.']),
                 ]
             ])
-            ->add('street', TextType::class,[
+            ->add('street', TextType::class, [
                 'label' => 'Numero et Rue'
             ])
-            ->add('postcode',TextType::class, [
+            ->add('postcode', TextType::class, [
                 'label' => 'Code postal'
             ])
             ->add('city', TextType::class, [

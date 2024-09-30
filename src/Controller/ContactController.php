@@ -22,8 +22,8 @@ class ContactController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             try {
                 $mailer->sendContatFormEmail($form);
-                $this->addFlash('success','Message sent with success!');
-                
+                $this->addFlash('success', 'Message sent with success!');
+
                 return $this->redirect($request->getUri());
             } catch (\RuntimeException $e) {
                 $errorMessage = $e->getMessage();
@@ -31,7 +31,7 @@ class ContactController extends AbstractController
         }
         return $this->render('pages/contact.html.twig', [
             'form' => $form->createView(),
-            'errorMessage' => isset($errorMessage)? $errorMessage : null,
+            'errorMessage' => isset($errorMessage) ? $errorMessage : null,
         ]);
     }
 }
