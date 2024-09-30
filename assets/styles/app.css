@@ -4,10 +4,10 @@
 
 @layer base {
 	h1 {
-		@apply text-3xl font-bold text-lime-400 mb-8 text-center;
+		@apply mb-8 text-center text-3xl font-bold text-lime-400;
 	}
 	h2 {
-		@apply text-2xl font-bold text-orange-400 mb-6;
+		@apply mb-6 text-2xl font-bold text-orange-400;
 	}
 
 	p {
@@ -33,7 +33,7 @@
 body {
 	background-color: #000000;
 
-	background-image: url("../images/design/background.jpg");
+	background-image: url('../images/design/background.jpg');
 	background-repeat: no-repeat;
 	background-position: top center;
 }

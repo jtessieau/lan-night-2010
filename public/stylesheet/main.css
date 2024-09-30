@@ -75,7 +75,7 @@ select {
 body {
 	background-color: #000000;
 
-	background-image: url("../pictures/design/background.jpg");
+	background-image: url('../pictures/design/background.jpg');
 	background-repeat: no-repeat;
 	background-position: top center;
 }
