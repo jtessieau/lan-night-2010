@@ -1,79 +1,93 @@
 {% extends 'base.html.twig' %}
 
-{% block title %} Inscriptions {% endblock %}
+{% block title %}
+	Inscriptions
+{% endblock %}
 
 {% block body %}
-<p>
-    Vous &ecirc;tes sur le point de vous inscrire pour participer &agrave; la
-    LAN NIGHT &eacute;dition 2010.
-    Il reste encore
-    TODO: place restantes
-    places.
-    L'inscription sera valid&eacute;e UNIQUEMENT sous ces conditions :
-</p>
-<ul>
-    <li>r&eacute;ception du paiement de 5 euros (cf. <a href={{ path('app_informations') }}>infos</a>)</li>
-    <li>Signature du r&egrave;glement int&eacute;rieur</li>
-    <li>Remise l'autorisation parentale sign&eacute; (si besoin)</li>
-    <li>Pr&eacute;sentation de la pi&egrave;ce d'identit&eacute; du participant</li>
-</ul>
+	<p>
+		Vous &ecirc;tes sur le point de vous inscrire pour participer &agrave;
+		la LAN NIGHT &eacute;dition 2010. Il reste encore TODO: place restantes
+		places. L'inscription sera valid&eacute;e UNIQUEMENT sous ces conditions
+		:
+	</p>
+	<ul>
+		<li>
+			r&eacute;ception du paiement de 5 euros (cf. <a href="{{
+				path(
+					'app_informations'
+				)
+				}}">
+				infos
+			</a>)
+		</li>
+		<li>Signature du r&egrave;glement int&eacute;rieur</li>
+		<li>Remise l'autorisation parentale sign&eacute; (si besoin)</li>
+		<li>
+			Pr&eacute;sentation de la pi&egrave;ce d'identit&eacute; du
+			participant
+		</li>
+	</ul>
 
-<p>
-    Les documents sont disponible &agrave; la Maison du Tourisme Brienonais
-    (adresse sur <a href={{ path('app_contact') }} title="Nous contacter">cette page</a>).
-    La secretaire pourra &eacute;galement prendre votre paiement.
-</p>
+	<p>
+		Les documents sont disponible &agrave; la Maison du Tourisme Brienonais
+		(adresse sur <a href="{{ path('app_contact') }}" title="Nous contacter">
+			cette page
+		</a>). La secretaire pourra &eacute;galement prendre votre paiement.
+	</p>
 
-<p>
-    Ces formalit&eacute;s pourront &ecirc;tre r&eacute;alis&eacute;es le jour
-    de la LAN NIGHT. Mais votre place ne sera pas r&eacute;serv&eacute;e.
-</p>
+	<p>
+		Ces formalit&eacute;s pourront &ecirc;tre r&eacute;alis&eacute;es le
+		jour de la LAN NIGHT. Mais votre place ne sera pas
+		r&eacute;serv&eacute;e.
+	</p>
 
-<p class="mise_a_jour">
-    ATTENTION : Les documents &agrave; remplir au MTB ne seront disponible
-    que le 08/01/2010. Merci de votre compr&eacute;hention.
-</p>
+	<p class="mise_a_jour">
+		ATTENTION : Les documents &agrave; remplir au MTB ne seront disponible
+		que le 08/01/2010. Merci de votre compr&eacute;hention.
+	</p>
 
-<p>
-    Conform&eacute;ment &agrave; la loi "Informatique et Libert&eacute;s" N 78-17
-    du 6 Janvier 1978 , vous b&eacute;n&eacute;ficiez d'un droit d'acc&egrave;s,
-    de rectification et d'opposition sur vos donn&eacute;es personnelles
-    que vous pouvez exercer en nous contactant
-    gr&acirc;ce &agrave; <a href={{ path('app_contact') }} title="Nous contacter">cette page</a>.
-</p>
-<p>
-    Celles-ci ne seront ni transmises, ni utilis&eacute;es pour
-    d'autres fins que l'organisation de la LAN NIGHT.
-</p>
+	<p>
+		Conform&eacute;ment &agrave; la loi "Informatique et Libert&eacute;s" N
+		78-17 du 6 Janvier 1978 , vous b&eacute;n&eacute;ficiez d'un droit
+		d'acc&egrave;s, de rectification et d'opposition sur vos donn&eacute;es
+		personnelles que vous pouvez exercer en nous contactant gr&acirc;ce
+		&agrave; <a href="{{ path('app_contact') }}" title="Nous contacter">
+			cette page
+		</a>.
+	</p>
+	<p>
+		Celles-ci ne seront ni transmises, ni utilis&eacute;es pour d'autres
+		fins que l'organisation de la LAN NIGHT.
+	</p>
 
-<div class="register-form-container">
-    <div class="illustration">
-        <img src="pictures/inscription_illustration.jpg" alt="Photo lan night 2009" />
-    </div>
+	<div class="register-form-container">
+		<div class="illustration">
+			<img src="pictures/inscription_illustration.jpg"
+				alt="Photo lan night 2009" />
+		</div>
 
-    <div class="formulaire _inscription">
-        {% if errorMessage %}
+		<div class="formulaire _inscription">
+			{% if errorMessage %}
+				{% if errorMessage == 'e-mail' %}
+					<div class="error-message">
+						Cette adresse e-mail est deja utilise.
+					</div>
+				{% else %}
+					<div class="error-message">
+						{{ errorMessage }}
+					</div>
+				{% endif %}
+			{% endif %}
 
-        {% if errorMessage == "e-mail" %}
-        <div class="error-message">
-            Cette adresse e-mail est deja utilise.
-        </div>
+			{% if app.flashes('success') is not empty %}
+				<div class="success-message">
+					Votre inscription a bien &eacute;t&eacute;
+					enregistr&eacute;. Merci.
+				</div>
+			{% endif %}
 
-        {% else %}
-        <div class="error-message">
-            {{ errorMessage }}
-        </div>
-        {% endif %}
-
-        {% endif %}
-
-        {% if app.flashes('success') is not empty %}
-        <div class="success-message">
-            Votre inscription a bien &eacute;t&eacute; enregistr&eacute;. Merci.
-        </div>
-        {% endif %}
-
-        {{ include('forms/registerToEvent.html.twig') }}
-    </div>
-</div>
+			{{ include('forms/registerToEvent.html.twig') }}
+		</div>
+	</div>
 {% endblock %}

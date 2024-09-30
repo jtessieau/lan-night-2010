@@ -1,0 +1,33 @@
+# COMPOSER
+/vendor
+
+# CRAFT STORAGE
+/storage/*
+
+# Document root
+/web/*
+
+# BUILD FILES
+/bower_components/*
+/node_modules/*
+/build/*
+/yarn-error.log
+
+# IDE
+/.vscode
+
+# Symfony
+/bin
+/config
+/migrations
+/var
+compose.override.yaml
+compose.yaml
+composer.json
+composer.lock
+package-lock.json
+package.json
+postcss.config.js
+symfony.lock
+tailwind.config.js
+webpack.config.js
