@@ -74,6 +74,10 @@ Encore
 		to: "images/[path][name].[ext]",
 	})
 	.copyFiles({
+        from: './assets/fonts',
+        to: 'fonts/[path][name].[ext]',
+    })
+	.copyFiles({
 		from: "./assets/contents",
 		to: "contents/[path][name].[ext]",
 	});

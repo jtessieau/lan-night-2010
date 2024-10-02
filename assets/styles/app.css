@@ -2,6 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+	font-family: 'nulshock';
+	src: url('../fonts/nulshock_bd.otf') format('opentype');
+	font-weight: normal;
+	font-style: normal;
+}
+
 @layer base {
 	h1 {
 		@apply mb-8 text-center text-3xl font-bold text-lime-400;
@@ -32,6 +39,46 @@
 	a {
 		@apply text-cyan-400;
 	}
+
+	.nav-item {
+		@apply h-full;
+	}
+	.nav-item a {
+		@apply flex h-full items-center justify-center px-2 align-baseline;
+	}
+
+	.nav-item:hover {
+		background-color: rgba(255, 255, 255, 0.1);
+	}
+
+	.nav-item a {
+		@apply text-lg font-bold text-white hover:text-black;
+
+		font-family: 'nulshock';
+
+		text-shadow:
+			1px 1px 0 black,
+			-1px -1px 0 black,
+			1px -1px 0 black,
+			-1px 1px 0 black;
+	}
+	.nav-item a:hover {
+		text-shadow:
+			2px 2px 4px rgba(0, 0, 0, 0.7),
+			1px 1px 0 black,
+			-1px -1px 0 black,
+			1px -1px 0 black,
+			-1px 1px 0 black;
+	}
+	.nav-item:nth-child(3n + 1) a {
+		@apply text-lime-400;
+	}
+	.nav-item:nth-child(3n + 2) a {
+		@apply text-orange-400;
+	}
+	.nav-item:nth-child(3n + 3) a {
+		@apply text-cyan-400;
+	}
 }
 
 body {
@@ -42,14 +89,8 @@ body {
 	background-position: top center;
 }
 
-.menu {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	height: 60px;
-	margin-top: 245px;
-	margin-left: 250px;
-	margin-bottom: 2rem;
+.text-shadow-custom {
+	text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .menu-splitter {
