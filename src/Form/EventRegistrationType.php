@@ -34,7 +34,6 @@ class EventRegistrationType extends AbstractType
                 'label' => 'Date de naissance',
                 'widget' => 'single_text',
                 'input'  => 'datetime_immutable',
-                'attr' => ['class' => 'birthdate-input'],
                 'constraints' => [
                     new Assert\NotBlank(['message' => 'Birth date required.']),
                 ]
@@ -61,7 +60,7 @@ class EventRegistrationType extends AbstractType
             ->add('cableNeeded', CheckboxType::class, [
                 'label' => 'J\'ai besoin que l\'on me prete un cable reseau.',
                 'label_attr' => [
-                    'class' => 'lable-checkbox'
+                    'class' => 'label-checkbox'
                 ],
                 'required' => false
             ])

@@ -28,6 +28,10 @@
 	section:last-child {
 		@apply mb-0;
 	}
+
+	a {
+		@apply text-cyan-400;
+	}
 }
 
 body {

@@ -60,14 +60,14 @@
 		Celles-ci ne seront ni transmises, ni utilis&eacute;es pour d'autres
 		fins que l'organisation de la LAN NIGHT.
 	</p>
-
-	<div class="register-form-container">
-		<div class="illustration">
-			<img src="pictures/inscription_illustration.jpg"
-				alt="Photo lan night 2009" />
+	<div class="flex flex-row-reverse items-center gap-8 mt-6">
+		<div class="hidden sm:block">
+			<img src="{{ asset('build/images/inscription_illustration.jpg') }}"
+				alt="Photo lan night 2009"
+				class="" />
 		</div>
 
-		<div class="formulaire _inscription">
+		<div class="flex-grow">
 			{% if errorMessage %}
 				{% if errorMessage == 'e-mail' %}
 					<div class="error-message">
