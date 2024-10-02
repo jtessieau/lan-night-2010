@@ -20,7 +20,7 @@ class ContactType extends AbstractType
             ->add('email', EmailType::class, [
                 'label' => 'E-mail:',
                 'constraints' => [
-                    new Assert\NotBlank(['message'=>'Email cannot be blank']),
+                    new Assert\NotBlank(['message' => 'Email cannot be blank']),
                     new Assert\Email(['message' => 'Please provide a valid email address'])
                 ]
             ])
@@ -33,7 +33,7 @@ class ContactType extends AbstractType
                 ],
                 'label' => 'Sujet:',
                 'placeholder' => 'Choisir un sujet',
-                'placeholder_attr' => ['disabled'=>true],
+                'placeholder_attr' => ['disabled' => true],
                 'constraints' => [
                     new Assert\Choice([
                         'choices' => ['organisation', 'technique', 'tools', 'autres'],

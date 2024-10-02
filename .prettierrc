@@ -1,0 +1,18 @@
+{
+	"useTabs": true,
+	"tabWidth": 4,
+	"semi": false,
+	"singleQuote": true,
+	"twigSingleQuote": true,
+
+	"twigMultiTags": [
+		"nav,endnav",
+		"switch,case,default,endswitch",
+		"ifchildren,endifchildren",
+		"cache,endcache",
+		"js,endjs"
+	],
+
+	"plugins": ["@zackad/prettier-plugin-twig", "prettier-plugin-tailwindcss"],
+	"tailwindConfig": "./tailwind.config.js"
+}

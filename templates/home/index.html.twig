@@ -1,63 +1,97 @@
 {% extends 'base.html.twig' %}
 
-{% block title %} Accueil {% endblock %}
+{% block title %}
+	Accueil
+{% endblock %}
 
 {% block body %}
+	<h1>
+		Lan Night &Eacute;dition 2010
+	</h1>
 
-<div class="sidebar">
-	<div class="sidebar_remaining_days">
-		TODO: Remaining days
-	</div>
+	<main>
+		<p>
+			Suite au succ&egrave;s rencontr&eacute; l'an pass&eacute; par la
+			premi&egrave;re &eacute;dition de la nuit du jeu en r&eacute;seau,
+			la section &#171;&nbsp;<i>Informatique</i>&nbsp;&#187; de la Sentinelle
+			a reprit le flambeau pour mettre en place la
+			<strong>LAN&nbsp;NIGHT&nbsp;&Eacute;dition&nbsp;2010</strong>.
+		</p>
 
-	<div class="sidebar_remaining_places">
-		TODO: Remaining place
-	</div>
+		<p>
+			L'instant d'une nuit, rejoint d'autres
+			<i>gamers</i>
+			(passionn&eacute;s ou d&eacute;butants) dans des parties multi-joueurs
+			jouissives. Pas de comp&eacute;tition, juste le plaisir de jouer, et
+			l'ambiance du r&eacute;seau local.
+		</p>
 
-	<div class="sidebar_news">
-		<div class="sidebar_news_headtitle">Au Rapport</div>
-		TODO: Afficher news
-	</div>
-</div>
+		<p>
+			Si tu as encore des points &agrave; &eacute;claircir, rend toi sur
+			la page
+			<a href="{{ path('app_informations') }}">infos</a>. La plupart de
+			tes doutes y seront lev&eacute;s.
+		</p>
 
-<div class="mot_accueil">
-	<p>
-		A l'intention du <i>gamer</i> qui sommeil en toi.
-	</p>
+		<p>
+			Si au contraire, tu sais tous ce qu'il y a &agrave; savoir et que tu
+			veux participer, rends toi directement sur la page
+			<a href="{{ path('app_signup') }}">inscriptions</a>
+			afin de r&eacute;server ta place pour cette nuit unique.
+		</p>
+	</main>
 
-	<p>
-		Suite au succ&egrave;s rencontr&eacute; l'an pass&eacute; par la
-		premi&egrave;re &eacute;dition de la nuit du jeu en
-		r&eacute;seau, la section
-		&#171;&nbsp;<i>Informatique</i>&nbsp;&#187; de la Sentinelle a
-		reprit le flambeau pour mettre en place la
-		<strong>LAN&nbsp;NIGHT&nbsp;&Eacute;dition&nbsp;2010</strong>.
-	</p>
+	<section class="flex flex-wrap justify-center align-content-center gap-4 col-span-2 mt-16 mb-16">
+		<a href="{{ path('app_signup') }}"
+			class="inline-block uppercase font-bold py-2 px-4 rounded-lg bg-lime-400 border-2 border-transparent text-black text-md hover:bg-lime-300">
+			R&eacute;serve ta place
+		</a>
+		<a href="{{ path('app_informations') }}"
+			class="inline-block uppercase font-bold py-2 px-4 rounded-lg bg-transparent border-2 border-lime-400 text-lime-400 hover:bg-lime-400 hover:text-black text-md">
+			Plus d'informations
+		</a>
+	</section>
 
-	<p>
-		L'instant d'une nuit, rejoint d'autres
-		<i>gamers</i>
-		(passionn&eacute;s ou d&eacute;butants) dans des parties
-		multi-joueurs jouissives. Pas de comp&eacute;tition, juste le
-		plaisir de jouer, et l'ambiance du r&eacute;seau local.
-	</p>
+	<section class="flex flex-col md:flex-row gap-4">
+		<div class="flex flex-row md:flex-col gap-2">
+			<div class="px-4 py-4 border-4 rounded-2xl border-lime-400 flex flex-col justify-center flex-grow">
+				<div class="text-center text-lime-400 font-semibold text-lg">
+					Countdown
+				</div>
+				<div class="text-lime-400 font-bold text-2xl text-center">
+					{# TODO: Remaining days implementation #}
+					J - 153
+				</div>
+			</div>
 
-	<p>
-		Si tu as encore des points &agrave; &eacute;claircir, rend toi
-		sur la page
-		<a href={{ path('app_informations') }}>infos</a>. La plupart de tes doutes y seront
-		lev&eacute;s.
-	</p>
+			<div class="px-4 py-4 border-4 rounded-2xl border-orange-400 flex flex-col justify-center flex-grow">
+				<div class="text-center text-orange-400 font-semibold text-lg">
+					Places restantes
+				</div>
+				<div class="text-orange-400 font-bold text-2xl text-center">
+					{# TODO: Remaining places implementation #}
+					60
+				</div>
+			</div>
+		</div>
 
-	<p>
-		Si au contraire, tu sais tous ce qu'il y a &agrave; savoir et
-		que tu veux participer, rends toi directement sur la page
-		<a href={{ path('app_signup') }}>inscriptions</a>
-		afin de r&eacute;server ta place pour cette nuit unique.
-	</p>
-
-	<p class="mot_accueil_signature">
-		Julien alias
-		<b>Acronyme</b>
-	</p>
-</div>
+		<div class="px-8 py-4 border-4 rounded-2xl border-cyan-400 flex flex-col flex-grow gap-1 overflow-auto">
+			<div class="text-center text-cyan-400 font-semibold text-lg">
+				Les derni&egrave;res informations du front
+			</div>
+			{# TODO: New implementation #}
+			<ul class="py-4">
+				<li class="truncate">
+					Titre de la news ici meme si c'est trop long
+				</li>
+				<li class="truncate">
+					Titre de la news ici meme si c'est trop long
+				</li>
+				<li class="truncate">
+					Titre de la news ici meme si c'est trop long
+				</li>
+			</ul>
+			<a href="#">Voir plus</a>
+		</div>
+	</section>
 {% endblock %}

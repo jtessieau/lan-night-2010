@@ -1,65 +1,130 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Tools{% endblock %}
+{% block title %}
+	Tools
+{% endblock %}
 
 {% block body %}
-<p>
-    Retrouvez ici les petits (+) inutiles pour certains mais indispensables
-    pour d'autres. Des rajouts seront fait au fur et &agrave; mesure des
-    besoins de chacun. Une suggestion ? N'h&eacute;sitez pas &agrave; nous la faire
-    parvenir en passant par la page <a href={{ path('app_contact') }}>contact</a>.
-</p>
+	<main>
+		<h1>
+			Tools
+		</h1>
 
-<h2>
-    Checklist du <i>lanneur</i>
-</h2>
+		<p>
+			Retrouvez ici les petits (+) inutiles pour certains mais
+			indispensables pour d'autres. Des rajouts seront fait au fur et
+			&agrave; mesure des besoins de chacun. Une suggestion ?
+			N'h&eacute;sitez pas &agrave; nous la faire parvenir en passant par
+			la page <a href="{{ path('app_contact') }}">contact</a>.
+		</p>
+	</main>
 
-<p>
-    &Ccedil;a peut sembler idiot mais imaginez vous arrivant &agrave; la LAN sans
-    multiprise ou sans casque. Pour &eacute;viter cel&agrave;, nous vous avons
-    r&eacute;alis&eacute; une petite checklist &agrave; imprimer. Vous y
-    retrouverez uniquement l'indispensable (oubliez votre mini-frigo USB ne
-    vous empechera pas - en tout cas je l'espere - de passer une
-    bonne soir&eacute;e :p)
-</p>
+	<section>
+		<h2>
+			Checklist du <i>lanneur</i>
+		</h2>
 
-<div class="tools_liens_download">
-    <a href="contents/pdf/checklist.pdf">TELECHARGER LA CHECKLIST EN .PDF</a> (Acrobat Reader) <br />
-    <a href="contents/doc/checklist.doc">TELECHARGER LA CHECKLIST EN .DOC</a> (Microsoft Word)
-</div>
+		<p>
+			&Ccedil;a peut sembler idiot mais imaginez vous arrivant &agrave; la
+			LAN sans multiprise ou sans casque. Pour &eacute;viter cel&agrave;,
+			nous vous avons r&eacute;alis&eacute; une petite checklist &agrave;
+			imprimer. Vous y retrouverez uniquement l'indispensable (oubliez
+			votre mini-frigo USB ne vous empechera pas - en tout cas je l'espere
+			- de passer une bonne soir&eacute;e :p)
+		</p>
 
-<h2>
-    Grille des tarifs snack/bar 2010
-</h2>
+		<div class="flex flex-row gap-4 justify-center mt-8 mb-12 flex-wrap">
+			<div class="flex flex-col justify-center gap-2">
+				<div class="text-center">
+					Checklist PDF
+				</div>
+				<a href="{{ asset('build/contents/pdf/checklist.pdf') }}"
+					class="inline-block uppercase font-bold py-2 px-4 rounded-lg bg-transparent border-2 border-lime-400 text-lime-400 hover:bg-lime-400 hover:text-black text-md"
+					target="_blank">
+					<i class="fa-regular fa-file-pdf mr-2"></i> T&eacute;l&eacute;charger
+				</a>
+			</div>
 
-<p>
-    Voici les tarifs qui seront pratiqu&eacute;s lors de la LAN NIGHT 2010.
-</p>
+			<div class="flex flex-col gap-2">
+				<div class="text-center">
+					Checklist Word
+				</div>
+				<a href="{{ asset('build/contents/word/checklist.doc') }}"
+					class="inline-block uppercase font-bold py-2 px-4 rounded-lg bg-transparent border-2 border-lime-400 text-lime-400 hover:bg-lime-400 hover:text-black text-md"
+					target="_blank">
+					<i class="fa-regular fa-file-word mr-2"></i> T&eacute;l&eacute;charger
+				</a>
+			</div>
+		</div>
+	</section>
 
-<div class="tools_liens_download">
-    <a href="contents/pdf/tarif_snack_2010.pdf">TELECHARGER LA GRILLE AU FORMAT PDF</a> (Acrobat Reader)
-</div>
+	<section>
+		<h2>
+			Grille des tarifs snack/bar 2010
+		</h2>
 
-<h2>
-    R&eacute;glement et autorisation pour les mineurs v2010
-</h2>
+		<p>
+			Outre le repas fourni, un snack bar sera ouvert et &agrave; votre
+			disposition toute la nuit. Voici les tarifs qui seront
+			pratiqu&eacute;s lors de la LAN NIGHT 2010.
+		</p>
 
-<p>
-    Vous trouverez ci-dessous le r&eacute;glement int&egrave;rieur de la LAN NIGHT ainsi que
-    l'autorisation parentale pour les mineur (16-18&nbsp;ans).
-</p>
+		<div class="flex flex-row gap-4 justify-center mt-8 mb-12">
+			<div class="flex flex-col gap-2">
+				<div class="text-center">
+					Grille des tarifs 2010
+				</div>
+				<a href="{{ asset('build/contents/pdf/tarif_snack_2010.pdf') }}"
+					class="inline-block uppercase font-bold py-2 px-4 rounded-lg bg-transparent border-2 border-lime-400 text-lime-400 hover:bg-lime-400 hover:text-black text-md"
+					target="_blank">
+					<i class="fa-regular fa-file-pdf mr-2"></i> T&eacute;l&eacute;charger
+				</a>
+			</div>
+		</div>
+	</section>
 
-<p>
-    Ces documents seront disponible &agrave; la Maison du Tourisme, mais vous
-    pouvez aussi les imprimer et les remplir avant de venir valider votre inscription.
-</p>
+	<section>
+		<h2>
+			R&eacute;glement et autorisation pour les mineurs v2010
+		</h2>
 
-<div class="tools_liens_download">
-    <a href="contents/pdf/reglement_2010.pdf">TELECHARGER LE REGLEMENT AU FORMAT PDF</a> (Acrobat
-    Reader) <br />
-    <a href="contents/pdf/autorisation_parentale_2010.pdf">TELECHARGER L'AUTORISATION PARENTALE AU
-        FORMAT PDF</a>
-    (Acrobat Reader)
-</div>
+		<p>
+			Vous trouverez ci-dessous le r&eacute;glement int&egrave;rieur de la
+			LAN NIGHT ainsi que l'autorisation parentale pour les mineur
+			(16-18&nbsp;ans).
+		</p>
 
+		<p>
+			Ces documents seront disponible &agrave; la Maison du Tourisme, mais
+			vous pouvez aussi les imprimer et les remplir avant de venir valider
+			votre inscription.
+		</p>
+
+		<div class="flex flex-row gap-4 justify-center flex-wrap mt-8">
+			<div class="flex flex-col gap-2">
+				<div class="text-center">
+					R&eacute;glement int&eacute;rieur
+				</div>
+				<a href="{{ asset('build/contents/pdf/reglement_2010.pdf') }}"
+					class="inline-block uppercase font-bold py-2 px-4 rounded-lg bg-transparent border-2 border-lime-400 text-lime-400 hover:bg-lime-400 hover:text-black text-md"
+					target="_blank">
+					<i class="fa-regular fa-file-pdf mr-2"></i> T&eacute;l&eacute;charger
+				</a>
+			</div>
+			<div class="flex flex-col gap-2">
+				<div class="text-center">
+					Autorisation parentale
+				</div>
+				<a href="{{
+					asset(
+						'build/contents/pdf/autorisation_parentale_2010.pdf'
+					)
+					}}"
+					class="inline-block uppercase font-bold py-2 px-4 rounded-lg bg-transparent border-2 border-lime-400 text-lime-400 hover:bg-lime-400 hover:text-black text-md"
+					target="_blank">
+					<i class="fa-regular fa-file-pdf mr-2"></i> T&eacute;l&eacute;charger
+				</a>
+			</div>
+		</div>
+	</section>
 {% endblock %}

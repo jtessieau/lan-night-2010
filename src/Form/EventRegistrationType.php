@@ -34,15 +34,14 @@ class EventRegistrationType extends AbstractType
                 'label' => 'Date de naissance',
                 'widget' => 'single_text',
                 'input'  => 'datetime_immutable',
-                'attr' => ['class' => 'birthdate-input'],
                 'constraints' => [
                     new Assert\NotBlank(['message' => 'Birth date required.']),
                 ]
             ])
-            ->add('street', TextType::class,[
+            ->add('street', TextType::class, [
                 'label' => 'Numero et Rue'
             ])
-            ->add('postcode',TextType::class, [
+            ->add('postcode', TextType::class, [
                 'label' => 'Code postal'
             ])
             ->add('city', TextType::class, [
@@ -61,7 +60,7 @@ class EventRegistrationType extends AbstractType
             ->add('cableNeeded', CheckboxType::class, [
                 'label' => 'J\'ai besoin que l\'on me prete un cable reseau.',
                 'label_attr' => [
-                    'class' => 'lable-checkbox'
+                    'class' => 'label-checkbox'
                 ],
                 'required' => false
             ])

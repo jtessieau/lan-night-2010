@@ -1,43 +1,46 @@
 {% extends 'base.html.twig' %}
 
-{% block title %} Contact {% endblock %}
+{% block title %}
+	Contact
+{% endblock %}
 
 {% block body %}
-<h1>Comment nous contacter</h1>
+	<h1>
+		Comment nous contacter
+	</h1>
 
-<p>
-    Pour nous contacter rapidement, rien de plus simple ! Remplissez fomulaire en indiquant
-    soit un numero de t&eacute;l&eacute;phone,
-    soit une adresse e-mail o&ugrave; l'on peut vous joindre, ainsi que votre
-    question, et nous t&acirc;cherons d'y r&eacute;pondre au plus vite.
-</p>
-{% if errorMessage %}
-<div class="error-message">
-    <p>
-        Impossible d'envoyer le formulaire de contact pour le moment.
-    </p>
-    <p>
-        R&eacute;essayez plus tard ou contactez directement au num&eacute;ro ci-dessous.
-    </p>
-</div>
-{% endif %}
+	<p>
+		Pour nous contacter rapidement, rien de plus simple ! Remplissez
+		fomulaire en indiquant soit un numero de t&eacute;l&eacute;phone, soit
+		une adresse e-mail o&ugrave; l'on peut vous joindre, ainsi que votre
+		question, et nous t&acirc;cherons d'y r&eacute;pondre au plus vite.
+	</p>
+	{% if errorMessage %}
+		<div class="flex items-center mx-auto w-full max-w-lg p-4 text-orange-400 rounded-lg border-orange-400 border-solid border-2 my-4">
+			<p class="text-center">
+				Impossible d'envoyer le formulaire de contact pour le moment.
+			</p>
+			<p class="text-center">
+				R&eacute;essayez plus tard ou contactez directement au
+				num&eacute;ro ci-dessous.
+			</p>
+		</div>
+	{% endif %}
 
-{% if app.flashes('success') is not empty %}
-<div class="success-message">
-    <p>
-        Message envoy&eacute; ! Nous reviendrons vers vous au plus vite.
-    </p>
-</div>
-{% endif %}
+	{% if app.flashes('success') is not empty %}
+		<div class="flex items-center mx-auto w-full max-w-lg p-4 text-lime-400 rounded-lg border-lime-400 border-solid border-2 my-4">
+			<p class="text-center">
+				Message envoy&eacute; ! Nous reviendrons vers vous au plus vite.
+			</p>
+		</div>
+	{% endif %}
 
-<div class="contact-form-container">
-
-    {{ include("shared/addressMTB.html.twig")}}
-
-
-    {% if not errorMessage %}
-    {{ include("forms/contact.html.twig") }}
-    {% endif %}
-
-</div>
+	<div class="flex flex-row-reverse items-center justify-center gap-8 flex-wrap-reverse">
+		<div>
+			{{ include('shared/addressMTB.html.twig') }}
+		</div>
+		<div class="flex-grow">
+			{{ include('forms/contact.html.twig') }}
+		</div>
+	</div>
 {% endblock %}
