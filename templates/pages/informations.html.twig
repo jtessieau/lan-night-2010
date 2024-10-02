@@ -29,9 +29,29 @@
 				plus de nouveaux participants.
 			</p>
 		</div>
-
-		<div class="text-center">
-			{{ include('shared/addressMTB.html.twig') }}
+		<div class="flex flex-row justify-center items-center gap-8 min-h-[300px] flex-wrap">
+			<div class="flex-grow">
+				<iframe class="w-full min-w-80 h-80"
+					src="https://www.openstreetmap.org/export/embed.html?bbox=3.6135631799697876%2C47.992357558905084%2C3.6187988519668584%2C47.99391022265777&amp;layer=mapnik&amp;marker=47.99313389662125%2C3.6161810159683228"
+					style="border: 1px solid black"></iframe>
+				<div class="text-center">
+					<small>
+						<a href="https://www.openstreetmap.org/?mlat=47.993134&amp;mlon=3.616181#map=19/47.993134/3.616181">
+							View Larger Map
+						</a>
+					</small>
+				</div>
+			</div>
+			<div class="text-center">
+				<h3 class="text-lg font-semibold mb-3">
+					Adresse de la salle
+				</h3>
+				<address>
+					Salle des Fêtes de Brienon<br />
+					Place Emile Drominy 89210 <br />
+					Brienon-sur-Armançon
+				</address>
+			</div>
 		</div>
 	</section>
 	<section>
