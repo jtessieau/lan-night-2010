@@ -99,7 +99,7 @@
 {% endblock %}
 
 {% block button_widget %}
-    {%- set attr = attr|merge({ class: attr.class|default('px-2 py-1 border-2 rounded-lg hover:text-lime-400 hover:border-lime-400') }) -%}
+    {%- set attr = attr|merge({ class: attr.class|default('px-2 py-1 border-2 rounded-lg hover:text-lime-400 hover:border-lime-400 active:bg-lime-400 active:text-black') }) -%}
     <button type="{{ type|default('submit') }}" {{ block('attributes') }}>
         {{ label|default('Submit') }}
     </button>
