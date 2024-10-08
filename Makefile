@@ -9,3 +9,9 @@ SRC_DIR=src
 
 phpstan:
 	$(DOCKER_RUN) phpstan analyse --level=8 $(SRC_DIR)
+
+phpcs:
+	$(DOCKER_RUN) phpcs --standard=PSR12 $(SRC_DIR)
+
+phpmd:
+	$(DOCKER_RUN) phpmd $(SRC_DIR) text cleancode,codesize,controversial,design,naming,unusedcode
