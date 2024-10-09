@@ -5,6 +5,9 @@ DOCKER_RUN=docker run --rm -v $(shell pwd):/project -w /project $(PHPQA_IMAGE)
 
 SRC_DIR=src
 
+SC=symfony console
+SYMFONY_LINT=$(SC) lint:
+
 # Docker
 
 docker-up:
@@ -50,3 +53,15 @@ phpcbf:
 phpmd:
 	$(DOCKER_RUN) phpmd $(SRC_DIR) text cleancode,codesize,controversial,design,naming,unusedcode
 .PHONY: phpmd
+
+lint-twigs:
+	$(SYMFONY_LINT)twig ./templates
+.PHONY: lint-twigs
+
+lint-yaml:
+	$(SYMFONY_LINT)yaml ./config
+.PHONY: lint-yaml
+
+lint-container:
+	$(SYMFONY_LINT)container
+.PHONY: lint-container
